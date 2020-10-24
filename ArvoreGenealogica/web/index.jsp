@@ -14,7 +14,7 @@
     <body>
         <h3>Direcionamento</h3>
         <div>
-            <a href="admin/index.jsp">Área administrativa</a>
+            <a href="admin/home/index.jsp">Área administrativa</a>
         </div>
         <div>
             <a href="site/index.jsp">Site</a> 
