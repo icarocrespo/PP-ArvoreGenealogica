@@ -20,7 +20,7 @@
     <head>
         <title>Login</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="logincss.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="login.css" type="text/css" media="screen" />
     </head>
     <body>
         <div id="login">
