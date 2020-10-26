@@ -12,6 +12,5 @@
         <title>Área administrativa</title>
     </head>
     <body>
-        
     </body>
 </html>

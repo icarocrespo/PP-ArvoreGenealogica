@@ -7,6 +7,11 @@ import java.util.logging.Logger;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 
+/**
+ *
+ * @author siedler 
+ * edition icaro
+ */
 public abstract class GenericDAO<T, I extends Serializable> {
 
     protected EntityManager em;
