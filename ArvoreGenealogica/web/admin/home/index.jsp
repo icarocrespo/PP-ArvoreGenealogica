@@ -17,4 +17,17 @@
     </div>
 </div>
 <!-- /.row -->
+
+<div class="row">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="table-responsive">
+                <h2>Texto texto texto</h2>
+                <!-- /.table-responsive -->
+            </div>
+        </div>
+        <!-- /.panel-body -->
+    </div>
+    <!-- /.panel -->
+</div>
 <%@include file="../rodape.jsp" %>

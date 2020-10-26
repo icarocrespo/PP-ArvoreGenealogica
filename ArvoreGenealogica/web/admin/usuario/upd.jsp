@@ -1,10 +1,12 @@
+<%@page import="util.Criptografia"%>
 <%@page import="java.math.BigDecimal"%>
 <%@page import="model.Usuario"%>
 <%@page import="dao.UsuarioDAO"%>
 <%@page import="util.Upload"%>
 <%@page import="java.util.List"%>
 <%@include file="../cabecalho.jsp" %>
-<%    UsuarioDAO dao = new UsuarioDAO();
+<%    
+    UsuarioDAO dao = new UsuarioDAO();
     Usuario obj = new Usuario();
 
     if (request.getParameter("codigo") != null) {
@@ -12,6 +14,15 @@
     }
 
     if (request.getMethod().equals("POST")) {
+        obj.setId(Integer.parseInt(request.getParameter("txtId")));
+        obj.setLogin(request.getParameter("txtLogin"));
+        obj.setSenha(Criptografia.convertPasswordToMD5(request.getParameter("txtSenha")));
+       
+        
+        if(request.getParameter("txtAdmin").equals("sim"))
+            obj.setAdmin(true);
+        else
+            obj.setAdmin(false);
 
         dao.alterar(obj);
         response.sendRedirect("index.jsp");
@@ -53,21 +64,21 @@
                     </div>
                     <div class="form-group">
                         <label>Senha</label>
-                        <input class="form-control" placeholder="*****" type="text" name="txtSenha" required/>
+                        <input class="form-control" placeholder="*****" type="password" name="txtSenha" required/>
                     </div>
                     <div class="form-group">
                         <label>Admin</label><br>
                         <%
                             if (obj.getAdmin()) {
                         %>
-                        <input type="radio" name="txtAdmin" required value="" checked />
+                        <input type="radio" name="txtAdmin" required value="sim" checked />
                         <label for="nao">Sim</label><br>
-                        <input type="radio" name="txtAdmin" required value="" />
+                        <input type="radio" name="txtAdmin" required value="nao" />
                         <label for="nao">Não</label><br>
                         <%} else {%>
-                        <input type="radio" name="txtAdmin" required value="" />
+                        <input type="radio" name="txtAdmin" required value="sim" />
                         <label for="nao">Sim</label><br>
-                        <input type="radio" name="txtAdmin" required value="" checked />
+                        <input type="radio" name="txtAdmin" required value="nao" checked />
                         <label for="nao">Não</label><br>
                         <%}%>
                     </div>

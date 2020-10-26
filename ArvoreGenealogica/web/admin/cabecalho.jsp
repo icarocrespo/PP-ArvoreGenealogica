@@ -77,27 +77,17 @@
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav side-nav">
                         <li>
-                            <a href="../categoria/"><i class="fa fa-fw fa-edit"></i> Categoria</a>
+                            <a href="../familia/"><i class="fa fa-fw fa-edit"></i> Famílias</a>
                         </li>
                         <li>
-                            <a href="../usuario/"><i class="fa fa-fw fa-bar-chart-o"></i> Usuário</a>
+                            <a href="../localidade/"><i class="fa fa-fw fa-edit"></i> Localidades</a>
                         </li>
                         <li>
-                            <a href="../status/"><i class="fa fa-fw fa-bar-chart-o"></i> Status</a>
+                            <a href="../galeria/"><i class="fa fa-fw fa-edit"></i> Galeria</a>
                         </li>
                         <li>
-                            <a href="../marca/"><i class="fa fa-fw fa-bar-chart-o"></i> Marca</a>
+                            <a href="../usuario/"><i class="fa fa-fw fa-edit"></i> Usuário</a>
                         </li>
-                        <li>
-                            <a href="../cliente/"><i class="fa fa-fw fa-bar-chart-o"></i> Cliente</a>
-                        </li>
-                        <li>
-                            <a href="../produto/"><i class="fa fa-fw fa-bar-chart-o"></i> Produto</a>
-                        </li>
-                        <li>
-                            <a href="../venda/"><i class="fa fa-fw fa-bar-chart-o"></i> Venda</a>
-                        </li>
-
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
