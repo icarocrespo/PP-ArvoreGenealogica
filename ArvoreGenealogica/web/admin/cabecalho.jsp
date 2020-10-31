@@ -12,7 +12,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
-        <meta name="author" content="">
+        <meta name="author" content="Ícaro Crespo">
 
         <title>Sistema de Árvore Genealógica</title>
 
@@ -88,11 +88,15 @@
                         <li>
                             <a href="../usuario/"><i class="fa fa-fw fa-edit"></i> Usuário</a>
                         </li>
+                        <li>
+                            <a target="_blank" href="http://github.com/icarocrespo">Desenvolvido por Ícaro Crespo</a>
+                        </li>
                     </ul>
+                    
                 </div>
                 <!-- /.navbar-collapse -->
             </nav>
-
+                        
             <div id="page-wrapper">
 
                 <div class="container-fluid">
