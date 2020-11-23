@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Site</title>
+        <title>Árvore Genealógica</title>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -14,8 +14,10 @@
         <link rel="stylesheet" href="css/skel-noscript.css" />
         <link rel="stylesheet" href="css/style.css" />
         </noscript>
+        <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+        <!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
     </head>
-    <body class="homepage">
+    <body>
         <div id="wrapper">
 
             <!-- Header -->
@@ -24,16 +26,15 @@
 
                     <!-- Logo -->
                     <div id="logo">
-                        <h1><a href="#">Árvore Genealógica</a></h1>
-                        <!--<span>Design by TEMPLATED</span>-->
+                        <h1><a href="index.jsp">Árvore Genealógica</a></h1>
                     </div>
 
                     <!-- Nav -->
                     <nav id="nav">
                         <ul>
-                            <li class="active"><a href="index.jsp">Home</a></li>
+                            <li><a href="index.jsp">Home</a></li>
                             <li><a href="consultarFamilias.jsp">Consulte famílias</a></li>
-                            <li><a href="familias.jsp">Gerencie famílias</a></li>
+                            <li class="active"><a href="familias.jsp">Gerencie famílias</a></li>
                             <li><a href="familiares.jsp">Gerencie familiares</a></li>
                         </ul>
                     </nav>
@@ -44,7 +45,7 @@
             <div id="page">
                 <div class="container">
                     <div class="row">
-<!--                        <div class="3u">
+                        <div class="3u">
                             <section id="sidebar1">
                                 <header>
                                     <h2>Sidebar 1</h2>
@@ -64,31 +65,32 @@
                                     </li>
                                 </ul>
                             </section>
-                        </div>-->
-                        <div class="9u skel-cell-important">
+                        </div>
+                        <div class="6u skel-cell-important">
                             <section id="content" >
                                 <header>
-                                    <h2>O sistema</h2>
+                                    <h2>Three Column</h2>
                                 </header>
-                                <p>Esta é a <strong>Árvore Genealógica</strong>, um sistema para consulta e mapeamento de árvores genealógicas de famílias.</p>
-                                <p>Aqui você pode cadastrar e gerenciar famílias e seus componentes. Além disso, o sistema conta com galeria de fotos e pesquisa na base de registros.</p>
-                                
-                                <a href="consultarFamilias.jsp" class="button">Consulte na base do sistema</a>
+                                <p>Aliquam erat volutpat. Pellentesque tristique ante ut risus. Quisque dictum. Integer nisl risus, sagittis convallis, rutrum id, elementum congue, nibh. Suspendisse dictum porta lectus. Donec placerat odio vel elit. Nullam ante orci, pellentesque eget, tempus quis, ultrices in, est. Curabitur sit amet nulla. Nam in massa. Sed vel tellus. Curabitur sem urna, consequat vel, suscipit in, mattis placerat, nulla. Sed ac leo. Donec leo. Vivamus fermentum nibh in augue. Nulla enim eros, porttitor eu, tempus id, varius non, nibh. Duis enim nulla, luctus eu, dapibus lacinia, venenatis id, quam. Vestibulum imperdiet, magna nec eleifend rutrum, nunc lectus vestibulum velit.</p>
+                                <p>Aliquam erat volutpat. Pellentesque tristique ante ut risus. Quisque dictum. Integer nisl risus, sagittis convallis, rutrum id, elementum congue, nibh. Suspendisse dictum porta lectus. Donec placerat odio vel elit. Nullam ante orci, pellentesque eget, tempus quis, ultrices in, est. Curabitur sit amet nulla. Nam in massa. Sed vel tellus. Curabitur sem urna, consequat vel, suscipit in, mattis placerat, nulla. Sed ac leo. Donec leo. Vivamus fermentum nibh in augue. Nulla enim eros, porttitor eu, tempus id, varius non, nibh. Duis enim nulla, luctus eu, dapibus lacinia, venenatis id, quam. Vestibulum imperdiet, magna nec eleifend rutrum, nunc lectus vestibulum velit, euismod lacinia.<br>
+                                </p>
                             </section>
                         </div>
                         <div class="3u">
                             <section id="sidebard2">
                                 <header>
-                                    <h2>Funcionalidades</h2>
+                                    <h2>Sidebar 2</h2>
                                 </header>
                                 <ul class="style1">
-                                    <li class="first"><span class="fa fa-check"></span><a href="#">Cadastro de famílias</a></li>
-                                    <li><span class="fa fa-check"></span><a href="#">Controle de familiares</a></li>
-                                    <li><span class="fa fa-check"></span><a href="#">Galeria de fotos das familias</a></li>
-                                    <li><span class="fa fa-check"></span><a href="#">Pesquisa no acervo de fotos</a></li>
-                                    <li><span class="fa fa-check"></span><a href="#">Visualização de informaçãos</a></li>
+                                    <li class="first"><span class="fa fa-check"></span><a href="#">Maecenas luctus lectus at sapien</a></li>
+                                    <li><span class="fa fa-check"></span><a href="#">Etiam rhoncus volutpat erat</a></li>
+                                    <li><span class="fa fa-check"></span><a href="#">Donec dictum metus in sapien</a></li>
+                                    <li><span class="fa fa-check"></span><a href="#">Integer gravida nibh quis urna</a></li>
+                                    <li><span class="fa fa-check"></span><a href="#">Etiam posuere augue sit amet nisl</a></li>
+                                    <li><span class="fa fa-check"></span><a href="#">Mauris vulputate dolor nibh</a></li>
+                                    <li><span class="fa fa-check"></span><a href="#">Nulla luctus eleifend purus</a></li>
                                 </ul>
-                                <!--<a href="#" class="button">Botão</a>-->
+                                <a href="#" class="button">Full Article</a>
                             </section>
                         </div>
                     </div>
@@ -96,8 +98,8 @@
                 </div>	
             </div>
 
+
             <!-- Footer -->
-            <!--
             <div id="footer">
                 <div class="container">
                     <div class="row">
@@ -144,14 +146,14 @@
                     </div>
                 </div>
             </div>
--->
+
             <!-- Copyright -->
             <div id="copyright">
                 <div class="container">
-                    Desenvolvido por: <a target="_blank" href="http://github.com/icarocrespo">Ícaro Crespo</a><br><br>
-                    Design: <a target="_blank" href="http://templated.co">TEMPLATED</a> Images: <a target="_blank" href="http://unsplash.com">Unsplash</a> (<a target="_blank" href="http://unsplash.com/cc0">CC0</a>)
+                    Design: <a href="http://templated.co">TEMPLATED</a> Images: <a href="http://unsplash.com">Unsplash</a> (<a href="http://unsplash.com/cc0">CC0</a>)
                 </div>
             </div>
+
         </div>
     </body>
 </html>
