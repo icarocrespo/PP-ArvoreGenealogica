@@ -1,11 +1,12 @@
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.List"%>
 <%@page import="dao.PessoaDAO"%>
 <%@page import="model.Pessoa"%>
 <%@include file="../cabecalho.jsp" %>
-<%    
-    PessoaDAO dao = new PessoaDAO();
+<%    PessoaDAO dao = new PessoaDAO();
     List<Pessoa> lista = dao.listar();
-
+    SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+    
     if (request.getParameter("codigo") != null) {
         Pessoa obj = dao.buscarPorChavePrimaria(Integer.parseInt(request.getParameter("codigo")));
         dao.excluir(obj);
@@ -15,10 +16,10 @@
     } else {
         lista = dao.listar();
     }
-    
-    Pessoa pai;
-    Pessoa mae;
-    List <Pessoa> irmaos;
+
+    Pessoa pai = null;
+    Pessoa mae = null;
+    List<Pessoa> irmaos = null;
 %>
 
 <div class="row">
@@ -63,42 +64,58 @@
                             <th>Nome</th>
                             <th>Pai</th>
                             <th>Mãe</th>
-                            <th>Irmãos</th>
                             <th>Data nascimento</th>
                             <th>Data óbito</th>
                             <th>Local nascimento</th>
                             <th>Local óbito</th>
-                            <th>Escolaridade</th>
-                            <th>Títulos</th>
-                            <th>História</th>
-                            <th>Origem</th>
                             <th>Ações</th>
                         </tr>
                     </thead>
                     <tbody>
                         <%
+                            String data_nasc = "Não informado", data_obito = "Não informado";
+                            String local_nasc = "Não informado", local_obito = "Não informado";
                             for (Pessoa item : lista) {
+                                if(item.getDataNasc() != null){
+                                    data_nasc = df.format(item.getDataNasc());
+                                }
+                                if(item.getDataObito()!= null){
+                                    data_obito = df.format(item.getDataObito());
+                                }
+                                if(item.getLocalNasc()!= null){
+                                    local_nasc = item.getLocalNasc().getCidade();
+                                }
+                                if(item.getLocalObito()!= null){
+                                    local_obito = item.getLocalObito().getCidade();
+                                }
                         %>
                         <tr>
                             <td><%=item.getId()%></td>
                             <td><%=item.getNome()%></td>
+                            <%
+                                if (item.getPai() != null) {
+                            %>
                             <td<%=item.getPai().getNome()%>></td>
+                            <%
+                            } else {
+                            %>
+                            <td>Não informado</td>
+                            <%
+                                }
+                                if (item.getMae() != null) {
+                            %>
                             <td<%=item.getMae().getNome()%>></td>
                             <%
-                                for(Pessoa irmao: item.getPessoaList()){
+                            } else {
                             %>
-                            <td<%=irmao.getNome()%>></td>
+                            <td>Não informado</td>
                             <%
-                            }
+                                }
                             %>
-                            <td<%=item.getDataNasc()%>></td>
-                            <td<%=item.getDataObito()%>></td>
-                            <td<%=item.getLocalNasc()%>></td>
-                            <td<%=item.getLocalObito()%>></td>
-                            <td<%=item.getEscolaridade()%>></td>
-                            <td<%=item.getTitulos()%>></td>
-                            <td<%=item.getHistoria()%>></td>
-                            <td<%=item.getOrigem()%>></td>
+                            <td><%=data_nasc%></td>
+                            <td><%=data_obito%></td>
+                            <td><%=local_nasc%></td>
+                            <td><%=local_obito%></td>
                             <td><a href="upd.jsp?codigo=<%=item.getId()%>" class="btn  btn-primary btn-sm">Alterar</a>
                                 <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal" onclick="codigo =<%=item.getId()%>">Excluir</button>
                             </td>

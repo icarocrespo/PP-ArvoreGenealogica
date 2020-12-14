@@ -1,21 +1,11 @@
-<%@page import="model.Escolaridade"%>
-<%@page import="model.Pessoa"%>
-<%@page import="java.util.List"%>
-<%@page import="dao.PessoaDAO"%>
 <%@page import="util.Criptografia"%>
+<%@page import="model.Usuario"%>
+<%@page import="dao.UsuarioDAO"%>
 <%@include file="../cabecalho.jsp" %>
-<%    
-    if (request.getMethod().equals("POST")) {
-        
-        PessoaDAO dao = new PessoaDAO();
-        List<Pessoa> listaPessoas = dao.listar();
-        Pessoa obj = new Pessoa();
-        
-        Pessoa pai = new Pessoa();
-        Pessoa mae = new Pessoa();
-        
-        Escolaridade escolaridade = new Escolaridade();
-        Localidade localidade = new Localidade();
+<%    if (request.getMethod().equals("POST")) {
+        UsuarioDAO dao = new UsuarioDAO();
+        Usuario obj = new Usuario();
+
         obj.setLogin(request.getParameter("txtLogin"));
         obj.setSenha(Criptografia.convertPasswordToMD5(request.getParameter("txtSenha")));
 
