@@ -1,11 +1,14 @@
+<%@page import="model.Pessoa"%>
+<%@page import="java.util.List"%>
+<%@page import="dao.PessoaDAO"%>
 <%@page import="util.Criptografia"%>
-<%@page import="model.Usuario"%>
-<%@page import="dao.UsuarioDAO"%>
 <%@include file="../cabecalho.jsp" %>
 <%    if (request.getMethod().equals("POST")) {
-        UsuarioDAO dao = new UsuarioDAO();
-        Usuario obj = new Usuario();
-
+        
+        PessoaDAO dao = new PessoaDAO();
+        List<Pessoa> listaPessoas = dao.listar();
+        Pessoa obj = new Pessoa();
+        
         obj.setLogin(request.getParameter("txtLogin"));
         obj.setSenha(Criptografia.convertPasswordToMD5(request.getParameter("txtSenha")));
 

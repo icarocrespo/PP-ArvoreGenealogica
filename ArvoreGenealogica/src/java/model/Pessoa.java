@@ -43,7 +43,9 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Pessoa.findByProfissao", query = "SELECT p FROM Pessoa p WHERE p.profissao = :profissao")
     , @NamedQuery(name = "Pessoa.findByTitulos", query = "SELECT p FROM Pessoa p WHERE p.titulos = :titulos")
     , @NamedQuery(name = "Pessoa.findByHistoria", query = "SELECT p FROM Pessoa p WHERE p.historia = :historia")
-    , @NamedQuery(name = "Pessoa.findByOrigem", query = "SELECT p FROM Pessoa p WHERE p.origem = :origem")})
+    , @NamedQuery(name = "Pessoa.findByOrigem", query = "SELECT p FROM Pessoa p WHERE p.origem = :origem")
+    , @NamedQuery(name = "Pessoa.findFilter", query = "SELECT p FROM Pessoa p WHERE p.nome like :filtro OR "
+            + "p.profissao like :filtro")})
 public class Pessoa implements Serializable {
 
     private static final long serialVersionUID = 1L;

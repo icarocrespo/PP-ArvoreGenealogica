@@ -1,157 +1,66 @@
-<html>
-    <head>
-        <title>Site</title>
-        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <meta name="description" content="" />
-        <meta name="keywords" content="" />
-        <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
-        <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script src="js/skel.min.js"></script>
-        <script src="js/skel-panels.min.js"></script>
-        <script src="js/init.js"></script>
-        <noscript>
-        <link rel="stylesheet" href="css/skel-noscript.css" />
-        <link rel="stylesheet" href="css/style.css" />
-        </noscript>
-    </head>
-    <body class="homepage">
-        <div id="wrapper">
 
-            <!-- Header -->
-            <div id="header">
-                <div class="container"> 
+<%@include file="cabecalho.jsp"%>
+<%    
+    
+%>
 
-                    <!-- Logo -->
-                    <div id="logo">
-                        <h1><a href="#">Árvore Genealógica</a></h1>
-                        <!--<span>Design by TEMPLATED</span>-->
-                    </div>
-
-                    <!-- Nav -->
-                    <nav id="nav">
-                        <ul>
-                            <li class="active"><a href="index.jsp">Home</a></li>
-                            <li><a href="consultarFamilias.jsp">Consulte famílias</a></li>
-                            <li><a href="familias.jsp">Gerencie famílias</a></li>
-                            <li><a href="familiares.jsp">Gerencie familiares</a></li>
-                        </ul>
-                    </nav>
-                </div>
+<div class="banner-section">
+    <div class="container">
+        <div class="banner-grids">
+            <div class="col-md-6 banner-grid">
+                <h2>Sistema gerenciador de árvore genealógica</h2>
+                <!--<p>Trabalho de Práticas de Programação.</p>-->
+                <a href="pessoas.jsp" class="button"> veja as pessoas </a>
             </div>
-            <!-- /Header -->
-
-            <div id="page">
-                <div class="container">
-                    <div class="row">
-<!--                        <div class="3u">
-                            <section id="sidebar1">
-                                <header>
-                                    <h2>Sidebar 1</h2>
-                                </header>
-                                <ul class="style3">
-                                    <li class="first">
-                                        <p class="date"><a href="#">Oct <b>03</b></a></p>
-                                        <p><a href="#">Donec leo, vivamus fermentum nibh in augue praesent urna congue rutrum. </a></p>
-                                    </li>
-                                    <li>
-                                        <p class="date"><a href="#">Sep <b>30</b></a></p>
-                                        <p><a href="#">Donec leo, vivamus fermentum nibh in augue praesent urna congue rutrum.</a></p>
-                                    </li>
-                                    <li>
-                                        <p class="date"><a href="#">Sep <b>27</b></a> </p>
-                                        <p><a href="#">Donec leo, vivamus fermentum nibh in augue praesent urna congue rutrum.</a></p>
-                                    </li>
-                                </ul>
-                            </section>
-                        </div>-->
-                        <div class="9u skel-cell-important">
-                            <section id="content" >
-                                <header>
-                                    <h2>O sistema</h2>
-                                </header>
-                                <p>Esta é a <strong>Árvore Genealógica</strong>, um sistema para consulta e mapeamento de árvores genealógicas de famílias.</p>
-                                <p>Aqui você pode cadastrar e gerenciar famílias e seus componentes. Além disso, o sistema conta com galeria de fotos e pesquisa na base de registros.</p>
-                                
-                                <a href="consultarFamilias.jsp" class="button">Consulte na base do sistema</a>
-                            </section>
-                        </div>
-                        <div class="3u">
-                            <section id="sidebard2">
-                                <header>
-                                    <h2>Funcionalidades</h2>
-                                </header>
-                                <ul class="style1">
-                                    <li class="first"><span class="fa fa-check"></span><a href="#">Cadastro de famílias</a></li>
-                                    <li><span class="fa fa-check"></span><a href="#">Controle de familiares</a></li>
-                                    <li><span class="fa fa-check"></span><a href="#">Galeria de fotos das familias</a></li>
-                                    <li><span class="fa fa-check"></span><a href="#">Pesquisa no acervo de fotos</a></li>
-                                    <li><span class="fa fa-check"></span><a href="#">Visualização de informaçãos</a></li>
-                                </ul>
-                                <!--<a href="#" class="button">Botão</a>-->
-                            </section>
-                        </div>
-                    </div>
-
-                </div>	
+            <div class="col-md-6 banner-grid1">
+                <img src="../fotos/arvore.png" class="img-responsive" height="600" width="600" alt=""/><br><br><br><br>
             </div>
-
-            <!-- Footer -->
-            <!--
-            <div id="footer">
-                <div class="container">
-                    <div class="row">
-                        <div class="3u">
-                            <section id="box1">
-                                <header>
-                                    <h2>Nulla facilisi</h2>
-                                </header>
-                                <ul class="style3">
-                                    <li class="first">
-                                        <p class="date"><a href="#">10.03.2012</a></p>
-                                        <p><a href="#">Vestibulum sem magna, elementum ut, vestibulum facilisis. Nulla facilisi. Cum sociis natoque penatibus.</a></p>
-                                    </li>
-                                    <li>
-                                        <p class="date"><a href="#">10.03.2012</a></p>
-                                        <p><a href="#">Pellentesque erat erat, tincidunt in, eleifend, malesuada bibendum. Suspendisse sit amet  in eros bibendum condimentum. </a> </p>
-                                    </li>
-                                </ul>
-                            </section>
-                        </div>
-                        <div class="6u">
-                            <section id="box2">
-                                <header>
-                                    <h2>Donec dictum metus</h2>
-                                </header>
-                                <div> <a href="#" class="image full"><img src="images/pics02.jpg" alt=""></a> </div>
-                                <p>Nulla enim eros, porttitor eu, tempus id, varius non, nibh. Duis enim nulla, luctus eu, dapibus lacinia, venenatis id, quam. Vestibulum imperdiet, magna nec eleifend rutrum, nunc lectus vestibulum velit, euismod lacinia quam nisl id lorem. Quisque erat. Vestibulum pellentesque, justo mollis pretium suscipit, justo nulla blandit libero, in blandit augue justo quis nisl.</p>
-                            </section>
-                        </div>
-                        <div class="3u">
-                            <section id="box3">
-                                <header>
-                                    <h2>Gravida ipsum</h2>
-                                </header>
-                                <ul class="style1">
-                                    <li class="first"><a href="#">Pellentesque quis elit non lectus eleifend purus condimentum.</a></li>
-                                    <li><a href="#">Lorem ipsum dolort, consectetuer adipiscing dictum metus sapien.</a></li>
-                                    <li><a href="#">Phasellus nec dictum metus in sapien pellentesque congue.</a></li>
-                                    <li><a href="#">Cras vitae metus aliquam risus dictum metus in sapien pharetra.</a></li>
-                                    <li><a href="#">Duis non dictum metus in sapien ante in metus commodo euismod lobortis.</a></li>
-                                </ul>
-                            </section>
-                        </div>
-                    </div>
-                </div>
-            </div>
--->
-            <!-- Copyright -->
-            <div id="copyright">
-                <div class="container">
-                    Desenvolvido por: <a target="_blank" href="http://github.com/icarocrespo">Ícaro Crespo</a><br><br>
-                    Design: <a target="_blank" href="http://templated.co">TEMPLATED</a> Images: <a target="_blank" href="http://unsplash.com">Unsplash</a> (<a target="_blank" href="http://unsplash.com/cc0">CC0</a>)
-                </div>
-            </div>
+            <div class="clearfix"></div>
         </div>
-    </body>
-</html>
+    </div>
+</div>
+<div class="banner-bottom">
+    <div class="gallery-cursual">
+        <!--requried-jsfiles-for owl-->
+        <script src="js/owl.carousel.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("#owl-demo").owlCarousel({
+                    items: 3,
+                    lazyLoad: true,
+                    autoPlay: true,
+                    pagination: false,
+                });
+            });
+        </script>
+        <!--requried-jsfiles-for owl -->
+        <!--start content-slider-->
+        <div id="owl-demo" class="owl-carousel text-center">
+            <%
+                for (Pessoa item : pessoas) {
+            %>
+            <a href="single.jsp?id=<%=item.getId()%>">
+                <div class="item">
+                    <img class="lazyOwl" data-src="../fotos/arvore.png" alt="">
+                    <div class="item-info">
+                        <h5><%=item.getNome()%></h5>
+                    </div>
+                </div>
+            </a>
+            <%
+                }
+            %>
+        </div>
+        <!--sreen-gallery-cursual-->
+    </div>
+</div>
+<div class="gallery">
+    <div class="container">
+        <h3>Produtos Relacionados</h3>
+        <div class="gallery-grids">
+            
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<%@include file="rodape.jsp"%>
