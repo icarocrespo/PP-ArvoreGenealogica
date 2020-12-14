@@ -15,8 +15,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -44,8 +42,7 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Pessoa.findByTitulos", query = "SELECT p FROM Pessoa p WHERE p.titulos = :titulos")
     , @NamedQuery(name = "Pessoa.findByHistoria", query = "SELECT p FROM Pessoa p WHERE p.historia = :historia")
     , @NamedQuery(name = "Pessoa.findByOrigem", query = "SELECT p FROM Pessoa p WHERE p.origem = :origem")
-    , @NamedQuery(name = "Pessoa.findFilter", query = "SELECT p FROM Pessoa p WHERE p.nome like :filtro OR "
-            + "p.profissao like :filtro")})
+    , @NamedQuery(name = "Pessoa.findByUriFoto", query = "SELECT p FROM Pessoa p WHERE p.uriFoto = :uriFoto")})
 public class Pessoa implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -71,13 +68,8 @@ public class Pessoa implements Serializable {
     private String historia;
     @Column(name = "origem")
     private String origem;
-    @JoinTable(name = "irmao", joinColumns = {
-        @JoinColumn(name = "irmao", referencedColumnName = "id")}, inverseJoinColumns = {
-        @JoinColumn(name = "pessoa", referencedColumnName = "id")})
-    @ManyToMany
-    private List<Pessoa> pessoaList;
-    @ManyToMany(mappedBy = "pessoaList")
-    private List<Pessoa> pessoaList1;
+    @Column(name = "uri_foto")
+    private String uriFoto;
     @JoinColumn(name = "escolaridade", referencedColumnName = "id")
     @ManyToOne
     private Escolaridade escolaridade;
@@ -88,17 +80,17 @@ public class Pessoa implements Serializable {
     @ManyToOne
     private Localidade localObito;
     @OneToMany(mappedBy = "irmao")
-    private List<Pessoa> pessoaList2;
+    private List<Pessoa> pessoaList;
     @JoinColumn(name = "irmao", referencedColumnName = "id")
     @ManyToOne
     private Pessoa irmao;
     @OneToMany(mappedBy = "mae")
-    private List<Pessoa> pessoaList3;
+    private List<Pessoa> pessoaList1;
     @JoinColumn(name = "mae", referencedColumnName = "id")
     @ManyToOne
     private Pessoa mae;
     @OneToMany(mappedBy = "pai")
-    private List<Pessoa> pessoaList4;
+    private List<Pessoa> pessoaList2;
     @JoinColumn(name = "pai", referencedColumnName = "id")
     @ManyToOne
     private Pessoa pai;
@@ -179,22 +171,12 @@ public class Pessoa implements Serializable {
         this.origem = origem;
     }
 
-    @XmlTransient
-    public List<Pessoa> getPessoaList() {
-        return pessoaList;
+    public String getUriFoto() {
+        return uriFoto;
     }
 
-    public void setPessoaList(List<Pessoa> pessoaList) {
-        this.pessoaList = pessoaList;
-    }
-
-    @XmlTransient
-    public List<Pessoa> getPessoaList1() {
-        return pessoaList1;
-    }
-
-    public void setPessoaList1(List<Pessoa> pessoaList1) {
-        this.pessoaList1 = pessoaList1;
+    public void setUriFoto(String uriFoto) {
+        this.uriFoto = uriFoto;
     }
 
     public Escolaridade getEscolaridade() {
@@ -222,12 +204,12 @@ public class Pessoa implements Serializable {
     }
 
     @XmlTransient
-    public List<Pessoa> getPessoaList2() {
-        return pessoaList2;
+    public List<Pessoa> getPessoaList() {
+        return pessoaList;
     }
 
-    public void setPessoaList2(List<Pessoa> pessoaList2) {
-        this.pessoaList2 = pessoaList2;
+    public void setPessoaList(List<Pessoa> pessoaList) {
+        this.pessoaList = pessoaList;
     }
 
     public Pessoa getIrmao() {
@@ -239,12 +221,12 @@ public class Pessoa implements Serializable {
     }
 
     @XmlTransient
-    public List<Pessoa> getPessoaList3() {
-        return pessoaList3;
+    public List<Pessoa> getPessoaList1() {
+        return pessoaList1;
     }
 
-    public void setPessoaList3(List<Pessoa> pessoaList3) {
-        this.pessoaList3 = pessoaList3;
+    public void setPessoaList1(List<Pessoa> pessoaList1) {
+        this.pessoaList1 = pessoaList1;
     }
 
     public Pessoa getMae() {
@@ -256,12 +238,12 @@ public class Pessoa implements Serializable {
     }
 
     @XmlTransient
-    public List<Pessoa> getPessoaList4() {
-        return pessoaList4;
+    public List<Pessoa> getPessoaList2() {
+        return pessoaList2;
     }
 
-    public void setPessoaList4(List<Pessoa> pessoaList4) {
-        this.pessoaList4 = pessoaList4;
+    public void setPessoaList2(List<Pessoa> pessoaList2) {
+        this.pessoaList2 = pessoaList2;
     }
 
     public Pessoa getPai() {

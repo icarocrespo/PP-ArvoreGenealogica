@@ -22,6 +22,7 @@
                 <h4>Colabore</h4>
                 <ul>
                     <li><a href="pessoas.jsp">Cadastre familiares</a></li>
+                    <li><a href="contact.jsp">Via e-mail</a></li>
                 </ul>
             </div>
             <div class="col-md-2 footer-grid">

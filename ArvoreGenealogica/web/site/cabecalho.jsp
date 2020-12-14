@@ -71,7 +71,7 @@
                     
                     <div class="top-right">
                         <ul>
-                            <li class="text"><a href="login.jsp">Teste</a></li>
+                            <li class="text"></li>
                         </ul>
                     </div>
                     <div class="clearfix"></div>
@@ -109,7 +109,17 @@
                                         </ul>
                                     </li>
                                     <li class="dropdown">
-                                        <a href="pessoas.jsp" >Pessoas <b class="caret"></b></a>
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pessoas<b class="caret"></b></a>
+                                        <ul class="dropdown-menu multi-column columns-1">
+                                            <div class="row">
+                                                <div class="col-sm-2">
+                                                    <ul class="multi-column-dropdown">
+                                                        <li><a class="list" href="pessoas.jsp">Todas as pessoas</a></li>
+                                                        <li><a class="list" href="addFamiliar.jsp">Adicionar pessoa</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </ul>
                                     </li>
                                 </ul>
                             </div>

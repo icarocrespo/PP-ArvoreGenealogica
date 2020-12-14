@@ -1,12 +1,14 @@
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.List"%>
-<%@page import="dao.UsuarioDAO"%>
-<%@page import="model.Usuario"%>
+<%@page import="dao.LocalidadeDAO"%>
+<%@page import="model.Localidade"%>
 <%@include file="../cabecalho.jsp" %>
-<%    UsuarioDAO dao = new UsuarioDAO();
-    List<Usuario> lista = dao.listar();
-
+<%    
+    LocalidadeDAO dao = new LocalidadeDAO();
+    List<Localidade> lista = dao.listar();
+    
     if (request.getParameter("codigo") != null) {
-        Usuario obj = dao.buscarPorChavePrimaria(Integer.parseInt(request.getParameter("codigo")));
+        Localidade obj = dao.buscarPorChavePrimaria(Integer.parseInt(request.getParameter("codigo")));
         dao.excluir(obj);
     }
     if (request.getParameter("txtFiltro") != null) {
@@ -19,7 +21,7 @@
 <div class="row">
     <div class="col-lg-12">
         <h1 class="page-header">
-            Gerenciamento de Usuários
+            Gerenciamento de Localidades
         </h1>
         <ol class="breadcrumb">
             <li>
@@ -55,28 +57,26 @@
                     <thead>
                         <tr>
                             <th>Id</th>
-                            <th>Login</th>
-                            <th>Senha</th>
-                            <th>Admin</th>
+                            <th>Cidade</th>
+                            <th>Endereço</th>
+                            <th>País</th>
+                            <th>Outros dados</th>
                             <th>Ações</th>
                         </tr>
                     </thead>
                     <tbody>
                         <%
-                            for (Usuario item : lista) {
+                            String data_nasc = "Não informado", data_obito = "Não informado";
+                            String local_nasc = "Não informado", local_obito = "Não informado";
+                            for (Localidade item : lista) {
+                                
                         %>
                         <tr>
                             <td><%=item.getId()%></td>
-                            <td><%=item.getLogin()%></td>
-                            <td>*****************</td>
-                            <%
-                                String admin;
-                                if(item.getAdmin())
-                                    admin = "Permissão total";
-                                else
-                                    admin = "Permissão básica";
-                            %>
-                            <td><%=admin%></td>
+                            <td><%=item.getCidade()%></td>
+                            <td><%=item.getEndereco()%></td>
+                            <td><%=item.getPais()%></td>
+                            <td><%=item.getOutros()%></td>
                             <td><a href="upd.jsp?codigo=<%=item.getId()%>" class="btn  btn-primary btn-sm">Alterar</a>
                                 <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal" onclick="codigo =<%=item.getId()%>">Excluir</button>
                             </td>

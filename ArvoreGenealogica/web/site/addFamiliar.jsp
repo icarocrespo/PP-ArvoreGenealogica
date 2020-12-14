@@ -1,12 +1,11 @@
-<%@page import="util.Upload"%>
+<%@page import="model.Localidade"%>
 <%@page import="dao.LocalidadeDAO"%>
 <%@page import="dao.EscolaridadeDAO"%>
-<%@page import="model.Localidade"%>
 <%@page import="model.Escolaridade"%>
-<%@page import="model.Pessoa"%>
-<%@page import="java.util.List"%>
-<%@page import="dao.PessoaDAO"%>
-<%@include file="../cabecalho.jsp" %>
+<%@page import="util.Upload"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Date"%>
+<%@include file="cabecalho.jsp"%>
 <%    String msg = null;
     PessoaDAO dao = new PessoaDAO();
     List<Pessoa> pais = dao.listar();
@@ -82,34 +81,21 @@
 
             if (dao.incluir(obj)) {
                 msg = "Pessoa adicionada com sucesso!";
-                response.sendRedirect("index.jsp");
             }
         }
     }
 %>
-<div class="row">
-    <div class="col-lg-12">
-        <h1 class="page-header">
-            Árvore Genealógica
-        </h1>
-        <ol class="breadcrumb">
-            <li>
-                <i class="fa fa-dashboard"></i>  <a href="index.jsp">Área Administrativa</a>
-            </li>
-            <li class="active">
-                <i class="fa fa-file"></i>
-            </li>
-        </ol>
-    </div>
-</div>
-<!-- /.row -->
-<div class="row">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            Pessoa
-        </div>
-        <div class="panel-body">
-            <form action="#" method="post" enctype="multipart/form-data">
+<div class="content">
+    <div class="product-model">
+        <%if (msg != null) {%>
+        <p>
+            <%=msg%></p>
+        <%}%>
+        <div class="container">
+            <h2>Adicionar Familiar</h2>			
+            <div class="col-md-12 product-model-sec">
+                <div class="panel-body">
+                    <form action="#" method="post" enctype="multipart/form-data">
                         <div class="col-lg-4">
                         </div>
                         <div class="col-lg-4">
@@ -219,8 +205,11 @@
                             <button class="btn btn-primary btn-lg" type="submit">Enviar</button>
                         </div>
                     </form>
+                </div>
+
+            </div>
         </div>
     </div>
 </div>
-<!-- /.row -->
-<%@include file="../rodape.jsp" %>
+<!---->
+<%@include file="rodape.jsp"%>

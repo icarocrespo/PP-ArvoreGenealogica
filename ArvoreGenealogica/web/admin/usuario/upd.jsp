@@ -5,8 +5,7 @@
 <%@page import="util.Upload"%>
 <%@page import="java.util.List"%>
 <%@include file="../cabecalho.jsp" %>
-<%    
-    UsuarioDAO dao = new UsuarioDAO();
+<%    UsuarioDAO dao = new UsuarioDAO();
     Usuario obj = new Usuario();
 
     if (request.getParameter("codigo") != null) {
@@ -17,12 +16,12 @@
         obj.setId(Integer.parseInt(request.getParameter("txtId")));
         obj.setLogin(request.getParameter("txtLogin"));
         obj.setSenha(Criptografia.convertPasswordToMD5(request.getParameter("txtSenha")));
-       
-        
-        if(request.getParameter("txtAdmin").equals("sim"))
+
+        if (request.getParameter("txtAdmin").equals("sim")) {
             obj.setAdmin(true);
-        else
+        } else {
             obj.setAdmin(false);
+        }
 
         dao.alterar(obj);
         response.sendRedirect("index.jsp");
@@ -82,8 +81,8 @@
                         <label for="nao">Não</label><br>
                         <%}%>
                     </div>
-
-                    <button class="btn btn-primary btn-sm" type="submit">Salvar</button>
+                </div>
+                <button class="btn btn-primary btn-sm" type="submit">Salvar</button>
             </form>
         </div>
     </div>

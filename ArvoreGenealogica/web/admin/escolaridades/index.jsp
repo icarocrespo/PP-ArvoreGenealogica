@@ -1,16 +1,14 @@
-<%@page import="model.Pessoa"%>
-<%@page import="dao.PessoaDAO"%>
-<%@page import="model.Foto"%>
-<%@page import="dao.FotoDAO"%>
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.List"%>
-<%@page import="dao.GaleriaDAO"%>
-<%@page import="model.Galeria"%>
+<%@page import="dao.EscolaridadeDAO"%>
+<%@page import="model.Escolaridade"%>
 <%@include file="../cabecalho.jsp" %>
 <%    
-    GaleriaDAO dao = new GaleriaDAO();
-    List<Galeria> lista = dao.listar();
+    EscolaridadeDAO dao = new EscolaridadeDAO();
+    List<Escolaridade> lista = dao.listar();
+    
     if (request.getParameter("codigo") != null) {
-        Galeria obj = dao.buscarPorChavePrimaria(Integer.parseInt(request.getParameter("codigo")));
+        Escolaridade obj = dao.buscarPorChavePrimaria(Integer.parseInt(request.getParameter("codigo")));
         dao.excluir(obj);
     }
     if (request.getParameter("txtFiltro") != null) {
@@ -18,20 +16,12 @@
     } else {
         lista = dao.listar();
     }
-    
-    FotoDAO fdao = new FotoDAO();
-    List<Foto> listaFoto;
-    
-    PessoaDAO pdao = new PessoaDAO();
-    List<Pessoa> listaPessoa;
-    
-
 %>
 
 <div class="row">
     <div class="col-lg-12">
         <h1 class="page-header">
-            Gerenciamento de Usuários
+            Gerenciamento de Escolaridade
         </h1>
         <ol class="breadcrumb">
             <li>
@@ -67,21 +57,19 @@
                     <thead>
                         <tr>
                             <th>Id</th>
-                            <th>Login</th>
-                            <th>Senha</th>
-                            <th>Admin</th>
+                            <th>Grau</th>
                             <th>Ações</th>
                         </tr>
                     </thead>
                     <tbody>
                         <%
-                            for (Galeria item : lista) {
+                            for (Escolaridade item : lista) {
                         %>
                         <tr>
-                            <td><%=item.getGaleriaPK()%></td>
-                            
-                            <td><a href="upd.jsp?codigo=<%=item.getGaleriaPK()%>" class="btn  btn-primary btn-sm">Alterar</a>
-                                <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal" onclick="codigo =<%=item.getGaleriaPK()%>">Excluir</button>
+                            <td><%=item.getId()%></td>
+                            <td><%=item.getGrau()%></td>
+                            <td><a href="upd.jsp?codigo=<%=item.getId()%>" class="btn  btn-primary btn-sm">Alterar</a>
+                                <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal" onclick="codigo =<%=item.getId()%>">Excluir</button>
                             </td>
                         </tr>
                         <%

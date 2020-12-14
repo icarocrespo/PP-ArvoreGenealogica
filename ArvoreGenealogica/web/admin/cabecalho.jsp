@@ -80,10 +80,10 @@
                             <a href="../familia/"><i class="fa fa-fw fa-edit"></i> Famílias</a>
                         </li>
                         <li>
-                            <a href="../localidade/"><i class="fa fa-fw fa-edit"></i> Localidades</a>
+                            <a href="../localidades/"><i class="fa fa-fw fa-edit"></i> Localidades</a>
                         </li>
                         <li>
-                            <a href="../galeria/"><i class="fa fa-fw fa-edit"></i> Galeria</a>
+                            <a href="../escolaridades/"><i class="fa fa-fw fa-edit"></i> Escolaridades</a>
                         </li>
                         <li>
                             <a href="../usuario/"><i class="fa fa-fw fa-edit"></i> Usuário</a>

@@ -30,7 +30,7 @@
                 <i class="fa fa-dashboard"></i>  <a href="index.jsp">Área Administrativa</a>
             </li>
             <li class="active">
-                <i class="fa fa-file"></i> la la la
+                <i class="fa fa-file"></i>
             </li>
         </ol>
     </div>

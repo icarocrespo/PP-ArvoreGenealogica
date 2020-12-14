@@ -3,11 +3,9 @@
   <persistence-unit name="ArvoreGenealogicaPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>model.Usuario</class>
-    <class>model.Galeria</class>
     <class>model.Localidade</class>
     <class>model.Pessoa</class>
     <class>model.Escolaridade</class>
-    <class>model.Foto</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/ppArvore"/>

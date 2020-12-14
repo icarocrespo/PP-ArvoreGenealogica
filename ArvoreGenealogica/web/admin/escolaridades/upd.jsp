@@ -1,23 +1,23 @@
-<%@page import="dao.LocalidadeDAO"%>
 <%@page import="dao.EscolaridadeDAO"%>
-<%@page import="model.Localidade"%>
+<%@page import="dao.EscolaridadeDAO"%>
 <%@page import="model.Escolaridade"%>
-<%@page import="model.Localidade"%>
+<%@page import="model.Escolaridade"%>
+<%@page import="model.Escolaridade"%>
 <%@page import="java.util.List"%>
-<%@page import="dao.LocalidadeDAO"%>
+<%@page import="dao.EscolaridadeDAO"%>
 <%@include file="../cabecalho.jsp" %>
-<%    LocalidadeDAO dao = new LocalidadeDAO();
+<%    EscolaridadeDAO dao = new EscolaridadeDAO();
+    Escolaridade obj = new Escolaridade();
+
+    if (request.getParameter("codigo") != null) {
+        obj = dao.buscarPorChavePrimaria(Integer.parseInt(request.getParameter("codigo")));
+    }
 
     if (request.getMethod().equals("POST")) {
+        obj.setId(Integer.parseInt(request.getParameter("id")));
+        obj.setGrau(request.getParameter("grau"));
 
-        Localidade obj = new Localidade();
-
-        obj.setCidade(request.getParameter("cidade"));
-        obj.setEndereco(request.getParameter("endereco"));
-        obj.setPais(request.getParameter("pais"));
-        obj.setOutros(request.getParameter("outros"));
-
-        dao.incluir(obj);
+        dao.alterar(obj);
         response.sendRedirect("index.jsp");
     }
 %>
@@ -41,27 +41,19 @@
 <div class="row">
     <div class="panel panel-default">
         <div class="panel-heading">
-            Localidade
+            Escolaridade
         </div>
         <div class="panel-body">
             <form action="#" method="post">
 
                 <div class="col-lg-6">
                     <div class="form-group">
-                        <label>Cidade</label>
-                        <input class="form-control" type="text" name="cidade" required/>
+                        <label>Id</label>
+                        <input class="form-control" type="text" name="id" readonly value="<%=obj.getId()%>"/>
                     </div>
                     <div class="form-group">
-                        <label>Endereço</label>
-                        <input class="form-control" type="text" name="endereco" />
-                    </div>
-                    <div class="form-group">
-                        <label>País</label>
-                        <input class="form-control" type="text" name="pais" />
-                    </div>
-                    <div class="form-group">
-                        <label>Outros</label>
-                        <input class="form-control" type="text" name="outros" />
+                        <label>Grau</label>
+                        <input class="form-control" type="text" name="cidade" value="<%=obj.getGrau()%>" />
                     </div>
                     <button class="btn btn-primary btn-sm" type="submit">Salvar</button>
                 </div>

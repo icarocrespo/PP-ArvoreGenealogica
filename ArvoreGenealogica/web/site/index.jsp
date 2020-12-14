@@ -1,4 +1,3 @@
-
 <%@include file="cabecalho.jsp"%>
 <%    
     
@@ -9,8 +8,9 @@
         <div class="banner-grids">
             <div class="col-md-6 banner-grid">
                 <h2>Sistema gerenciador de árvore genealógica</h2>
-                <!--<p>Trabalho de Práticas de Programação.</p>-->
+                <!--<p>Trabalho de Práticas de Programação.</p>--><br>
                 <a href="pessoas.jsp" class="button"> veja as pessoas </a>
+                <a href="addFamiliar.jsp" class="button"> solicite novas pessoas</a>
             </div>
             <div class="col-md-6 banner-grid1">
                 <img src="../fotos/arvore.png" class="img-responsive" height="600" width="600" alt=""/><br><br><br><br>
@@ -38,6 +38,18 @@
         <div id="owl-demo" class="owl-carousel text-center">
             <%
                 for (Pessoa item : pessoas) {
+                    if(item.getUriFoto() != null){
+            %>
+            <a href="single.jsp?id=<%=item.getId()%>">
+                <div class="item">
+                    <img class="lazyOwl" data-src="../fotos/<%=item.getUriFoto()%>" height="100" width="80" alt="">
+                    <div class="item-info">
+                        <h5><%=item.getNome()%></h5>
+                    </div>
+                </div>
+            </a>
+            <%
+                }else{
             %>
             <a href="single.jsp?id=<%=item.getId()%>">
                 <div class="item">
@@ -48,7 +60,7 @@
                 </div>
             </a>
             <%
-                }
+            }}
             %>
         </div>
         <!--sreen-gallery-cursual-->
@@ -56,7 +68,7 @@
 </div>
 <div class="gallery">
     <div class="container">
-        <h3>Produtos Relacionados</h3>
+        
         <div class="gallery-grids">
             
         </div>
