@@ -102,7 +102,7 @@
                 <i class="fa fa-dashboard"></i>  <a href="index.jsp">Área Administrativa</a>
             </li>
             <li class="active">
-                <i class="fa fa-file"></i>
+                <i class="fa fa-file"></i> atualizar registro
             </li>
         </ol>
     </div>

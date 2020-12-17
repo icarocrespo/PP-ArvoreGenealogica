@@ -29,7 +29,7 @@
 <div class="row">
     <div class="col-lg-12">
         <h1 class="page-header">
-            Sistema de Comércio Eletrônico
+            Sistema de Árvore Genealógica
             <small>Admin</small>
         </h1>
         <ol class="breadcrumb">
@@ -37,7 +37,7 @@
                 <i class="fa fa-dashboard"></i>  <a href="index.jsp">Área Administrativa</a>
             </li>
             <li class="active">
-                <i class="fa fa-file"></i>
+                <i class="fa fa-file"></i> atualizar registro
             </li>
         </ol>
     </div>

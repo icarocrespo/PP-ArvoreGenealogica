@@ -73,6 +73,9 @@ public class Pessoa implements Serializable {
     @JoinColumn(name = "escolaridade", referencedColumnName = "id")
     @ManyToOne
     private Escolaridade escolaridade;
+    @JoinColumn(name = "familia", referencedColumnName = "id")
+    @ManyToOne
+    private Familia familia;
     @JoinColumn(name = "local_nasc", referencedColumnName = "id")
     @ManyToOne
     private Localidade localNasc;
@@ -185,6 +188,14 @@ public class Pessoa implements Serializable {
 
     public void setEscolaridade(Escolaridade escolaridade) {
         this.escolaridade = escolaridade;
+    }
+
+    public Familia getFamilia() {
+        return familia;
+    }
+
+    public void setFamilia(Familia familia) {
+        this.familia = familia;
     }
 
     public Localidade getLocalNasc() {

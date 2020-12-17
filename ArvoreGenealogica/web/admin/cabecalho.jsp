@@ -77,7 +77,10 @@
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav side-nav">
                         <li>
-                            <a href="../familia/"><i class="fa fa-fw fa-edit"></i> Famílias</a>
+                            <a href="../familia/"><i class="fa fa-fw fa-edit"></i> Familiares</a>
+                        </li>
+                        <li>
+                            <a href="../familias/"><i class="fa fa-fw fa-edit"></i> Famílias</a>
                         </li>
                         <li>
                             <a href="../localidades/"><i class="fa fa-fw fa-edit"></i> Localidades</a>

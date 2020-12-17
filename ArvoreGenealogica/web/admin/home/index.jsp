@@ -22,7 +22,7 @@
     <div class="panel panel-default">
         <div class="panel-body">
             <div class="table-responsive">
-                <h2>Texto texto texto</h2>
+                <h2>Acesse o menu ao lado</h2>
                 <!-- /.table-responsive -->
             </div>
         </div>

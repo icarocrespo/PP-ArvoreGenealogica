@@ -112,10 +112,23 @@
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pessoas<b class="caret"></b></a>
                                         <ul class="dropdown-menu multi-column columns-1">
                                             <div class="row">
-                                                <div class="col-sm-2">
+                                                <div class="col-sm-12">
                                                     <ul class="multi-column-dropdown">
                                                         <li><a class="list" href="pessoas.jsp">Todas as pessoas</a></li>
                                                         <li><a class="list" href="addFamiliar.jsp">Adicionar pessoa</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Familías<b class="caret"></b></a>
+                                        <ul class="dropdown-menu multi-column columns-1">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <ul class="multi-column-dropdown">
+                                                        <li><a class="list" href="familias.jsp">Todas as famílias</a></li>
+                                                        <li><a class="list" href="addFamilia.jsp">Adicionar família</a></li>
                                                     </ul>
                                                 </div>
                                             </div>

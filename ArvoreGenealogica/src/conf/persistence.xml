@@ -6,6 +6,7 @@
     <class>model.Localidade</class>
     <class>model.Pessoa</class>
     <class>model.Escolaridade</class>
+    <class>model.Familia</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/ppArvore"/>

@@ -90,11 +90,11 @@
                     <%
                         if (obj.getHistoria() != null) {
                     %>
-                    <p><%=obj.getHistoria()%>.</p>
+                    <p align="justify"><%=obj.getHistoria()%>.</p>
                     <%
                     } else {
                     %>
-                    <p>Não há história informada.</p>
+                    <p align="justify">Não há história informada.</p>
                     <%}%>
                     <div class="tag">
                     </div>

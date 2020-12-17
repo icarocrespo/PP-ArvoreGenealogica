@@ -1,3 +1,5 @@
+<%@page import="dao.FamiliaDAO"%>
+<%@page import="model.Familia"%>
 <%@page import="model.Localidade"%>
 <%@page import="dao.LocalidadeDAO"%>
 <%@page import="dao.EscolaridadeDAO"%>
@@ -17,6 +19,9 @@
     LocalidadeDAO locDAO = new LocalidadeDAO();
     List<Localidade> localidades = locDAO.listar();
 
+    FamiliaDAO familiaDAO = new FamiliaDAO();
+    List<Familia> familias = familiaDAO.listar();
+
     if (request.getMethod().equals("POST")) {
         Upload up = new Upload();
         up.setFolderUpload("fotos");
@@ -28,6 +33,7 @@
             Pessoa obj = new Pessoa();
             Pessoa pai;
             Pessoa mae;
+            Familia familia;
 
             Escolaridade escolaridade = new Escolaridade();
             Localidade localidade_nasc = new Localidade();
@@ -46,20 +52,25 @@
                 obj.setLocalObito(localidade_obito);
 
             }
-            
+
             if (!up.getForm().get("mae").toString().isEmpty() && !up.getForm().get("mae").toString().equals("Selecione")) {
                 mae = dao.buscarPorChavePrimaria(Integer.parseInt(up.getForm().get("mae").toString()));
                 obj.setMae(mae);
 
             }
-             if (!up.getForm().get("pai").toString().isEmpty() && !up.getForm().get("pai").toString().equals("Selecione")) {
+            if (!up.getForm().get("pai").toString().isEmpty() && !up.getForm().get("pai").toString().equals("Selecione")) {
                 pai = dao.buscarPorChavePrimaria(Integer.parseInt(up.getForm().get("pai").toString()));
                 obj.setPai(pai);
 
             }
+
+            if (!up.getForm().get("familia").toString().isEmpty() && !up.getForm().get("familia").toString().equals("Selecione")) {
+                familia = familiaDAO.buscarPorChavePrimaria(Integer.parseInt(up.getForm().get("familia").toString()));
+                obj.setFamilia(familia);
+
+            }
             //SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
-             
-             
+
             if (!up.getForm().get("data_nasc").toString().isEmpty()) {
                 //obj.setDataNasc(new Date(up.getForm().get("data_nasc").toString().isEmpty()));
 
@@ -90,7 +101,7 @@
         <%if (msg != null) {%>
         <p>
             <%=msg%></p>
-        <%}%>
+            <%}%>
         <div class="container">
             <h2>Adicionar Familiar</h2>			
             <div class="col-md-12 product-model-sec">
@@ -134,6 +145,19 @@
                             </div>
                         </div>
                         <div class="col-lg-6">
+                            <div class="form-group">
+                                <label>Familia</label>
+                                <select name ="familia" class="form-control"> 
+                                    <option>Selecione</option>
+                                    <%
+                                        for (Familia f : familias) {
+                                    %>
+                                    <option value="<%=f.getId()%>" ><%=f.getId()%> | <%=f.getNome()%></option>
+                                    <%
+                                        }
+                                    %>
+                                </select> <br /> 
+                            </div>
 
                             <div class="form-group">
                                 <label>Pai</label>
